@@ -11,12 +11,12 @@ function App() {
 
     try {
       // Current weather
-      const response = await fetch(` https://weather-backend-r5qk.onrender.com/api/weather?city=${city}`);
+      const response = await fetch("https://weather-backend-r5qk.onrender.com/api/weather?city=" + city);
       const data = await response.json();
       setWeather(data);
 
       // Forecast
-      const forecastResponse = await fetch(` https://weather-backend-r5qk.onrender.com/api/forecast?city=${city}`);
+      const forecastResponse = await fetch("https://weather-backend-r5qk.onrender.com/api/weather?city=" + city);
       const forecastData = await forecastResponse.json();
 
       const daily = forecastData.list.filter((_, i) => i % 8 === 0); // 1/day
